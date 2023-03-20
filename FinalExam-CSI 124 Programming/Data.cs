@@ -11,9 +11,9 @@ namespace FinalExam_CSI_124_Programming
 {
    public static class Data
     {
-        public static Manager currentManager = null;
+        public static UserAccount currentManager = null;
         public static string userFilePath = @"managerList.json";
-        public static List<Manager> managers = new List<Manager>();
+        public static List<UserAccount> managers = new List<UserAccount>();
         public static string teamRosterExtension = @"_team.csv";
         //JSON
         //CSV
@@ -48,7 +48,7 @@ namespace FinalExam_CSI_124_Programming
             // Reads all text from file
             string listFromFile = File.ReadAllText(filePath);
             // COnverts text to List of Name
-            managers = JsonSerializer.Deserialize<List<Manager>>(listFromFile);
+            managers = JsonSerializer.Deserialize<List<UserAccount>>(listFromFile);
         }
 
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeamClass_Library
 {
-    public class Manager
+    public class UserAccount
     {
         //We need Manager Classser Class)
         //Under Manager Class we have to have 
@@ -14,37 +14,51 @@ namespace TeamClass_Library
         // string _UserName 
         //string  _Password
         //enum position (Manager, General Manager)
-        public enum Position {Manager, General_Manager}
+       //Fields and Properties for all
+        public enum Role { UserRole, Admin }
         string _name;
         string _username;
         string _password;
-        Position _role;
+        Role _userRole;
 
         public string Name { get => _name; set => _name = value; }
         public string Username { get => _username; set => _username = value; }
         public string Password { get => _password; set => _password = value; }
-        public Position Role { get => _role; set => _role = value; }
+        public Role UserRole { get => _userRole; set => _userRole = value; }
 
-        public Manager(string name, string username, string password, Position role)
+        public UserAccount(string name, string username, string password, Role userRole)
         {
             _name = name;
             _username = username;
             _password = password;
-            _role = role;
+            _userRole = userRole;
         }
+
         //Required to saving CSV and Json files, as a defoult constractor and Properties with set.
-        public Manager()
+        public UserAccount()
         {
 
         }
-        //Lets create a Methods
-        public bool CheckName(string username)
+
+        public UserAccount(string name, string username, string password, string userRole)
         {
-            return _username == username;
+            Name = name;
+            Username = username;
+            Password = password;
         }
-        public bool ValidateUser(string username, string password)
+
+        //Lets create a Methods
+        // Used for login
+        public bool IsUser(string userName)
         {
-            return _username == Username && _password == password;  
+            return _username == userName;
+        }
+
+        // Used for login
+
+        public bool ValidateUser(string userName, string password)
+        {
+            return _username == userName && _password == password;
         }
     }
 }

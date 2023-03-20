@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeamClass_Library
 {
-   public class Player
+   public class Player : IComparable<Player>
     {
         //We need Player Class: IComparable( it's a defolt sort)
         //string _fristName
@@ -35,5 +35,10 @@ namespace TeamClass_Library
         public string LastName { get => _lastName; set => _lastName = value; }
         public string Number { get => _number; set => _number = value; }
         public double Salary { get => _salary; set => _salary = value; }
+
+        public int CompareTo(Player other)
+        {
+            return _lastName.CompareTo(other._lastName);
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace FinalExam_CSI_124_Programming
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string first = txtFirstName.Text;
+            string first = txtFirstName.Text;   
             string last = txtLastName.Text;
             string number = txtNumber.Text;
             double salary = double.Parse(txtSalary.Text);
@@ -87,5 +87,20 @@ namespace FinalExam_CSI_124_Programming
                 lvRoster.Items.Add(player);
             }
         }
+
+        private void btnSortName_Click(object sender, RoutedEventArgs e)
+        {
+            players.Sort();
+            UpdateListView();
+        }
+
+        private void btnSortSalary_Click(object sender, RoutedEventArgs e)
+        {
+            PlayerSort_Salary psSalary = new PlayerSort_Salary();
+            players.Sort(psSalary); 
+            UpdateListView();
+        }
+
+      
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TeamClass_Library
 {
-    public class PlayerSort_Salary
+    public class PlayerSort_Salary : IComparer<Player>
     {
+        public int Compare(Player x, Player y)
+        {
+            return x.Salary.CompareTo(y.Salary);
+        }
     }
 }

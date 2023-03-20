@@ -42,7 +42,7 @@ namespace FinalExam_CSI_124_Programming
             string userInputeName = txtUserName.Text;
             string userPassword = psPassword.Password;
 
-            foreach (Manager manager in Data.managers)
+            foreach (UserAccount manager in Data.managers)
             {
                 if (manager.CheckName(userInputeName))
                 {
@@ -51,7 +51,7 @@ namespace FinalExam_CSI_124_Programming
                         //This will run when the user has properly logged in
                         Data.currentManager = manager;
 
-                        if (Data.currentManager.Role == Manager.Position.General_Manager)
+                        if (Data.currentManager.Role == UserAccount.Position.General_Manager)
                         {
                             new TeamRoster().Show();
                         }

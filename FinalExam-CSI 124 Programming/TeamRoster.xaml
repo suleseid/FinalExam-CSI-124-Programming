@@ -3,14 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FinalExam_CSI_124_Programming"
         mc:Ignorable="d"
-        Title="TeamRoster" Height="396" Width="684">
-    <Canvas Background="#FFC89494" Margin="0,0,0,7" HorizontalAlignment="Center" Width="684">
-        <ListView x:Name="lvRoster" Height="321" Width="327" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="325" Canvas.Top="32">
+        Title="Te" Height="396" Width="748">
+    <Canvas Background="#FFC89494" Margin="0,0,0,7" HorizontalAlignment="Center" Width="748">
+        <ListView x:Name="lvRoster" Height="255" Width="327" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="325" Canvas.Top="32">
             <ListView.View>
                 <GridView>
-
                     <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}"/>
                     <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}"/>
                     <GridViewColumn Header="Number" DisplayMemberBinding="{Binding Number}"/>
@@ -23,12 +21,15 @@
             <Label x:Name="lbLastName" Content="Last Name" Canvas.Left="40" Canvas.Top="73" Width="78"/>
             <TextBox x:Name="txtLastName" Canvas.Left="58" TextWrapping="Wrap" Canvas.Top="99" Width="173" Height="22"/>
             <TextBox x:Name="txtNumber" Canvas.Left="58" TextWrapping="Wrap" Canvas.Top="177" Width="173" Height="22"/>
-            <TextBox x:Name="txtSalary" Canvas.Left="58" TextWrapping="Wrap" Canvas.Top="244" Width="173" Height="22"/>
+            <TextBox x:Name="txtSalary" Canvas.Left="58" TextWrapping="Wrap" Canvas.Top="244" Width="173" Height="22" TextChanged="txtSalary_TextChanged"/>
             <Label x:Name="ibNumber" Content="Number" Canvas.Left="40" Canvas.Top="135" Width="78" RenderTransformOrigin="0.558,0.194"/>
             <Label x:Name="ibSalary" Content="Salary" Canvas.Left="40" Canvas.Top="213" Width="78"/>
             <Button Content="Player" Canvas.Left="58" Canvas.Top="293" Width="173" Height="28" Click="Button_Click"/>
-            <Label x:Name="lbFirstName" Content="First Name" Canvas.Left="40" Canvas.Top="15" Width="68" RenderTransformOrigin="0.566,1.427"/>
         </Canvas>
+        <Button x:Name="btnSortName" Content="Sort by Name" Canvas.Left="342" Canvas.Top="323" Width="106" Height="30" Click="btnSortName_Click"/>
+        <Button x:Name="btnSortSalary" Content="Sort by Salary" Canvas.Left="516" Canvas.Top="323" Width="106" Height="30" Click="btnSortSalary_Click"/>
+        <Label Content="Label" Canvas.Left="50" Canvas.Top="32" Width="87"/>
+
     </Canvas>
 
 </Window>
